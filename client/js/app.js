@@ -1,15 +1,27 @@
-var app = angular.module('shortly', []);
+var app = angular.module('shortly', ['ngRoute']);
+
+app.config(['$routeProvider', function($routeProvider) {
+  $routeProvider
+    // .when('/', {
+    //   controller: 'linksController',
+    //   templateUrl: './home.html'
+    // })
+    .when('/create', {
+      controller: 'createController',
+      template: '<h2>hello</h2>'
+    });
+}]);
 
 app.controller('linksController', function($scope, downloadLinks) {
+  console.log('linksController top');
   downloadLinks.get()
     .then(function(data) {
-      console.log(data.data);
       $scope.links = data.data;
     });
 });
 
 app.factory('downloadLinks', function($http) {
-  console.log("inside factory");
+  console.log('downloadLinks');
   return {
     get: function () {
       return $http.get('/links')
@@ -26,7 +38,6 @@ app.factory('downloadLinks', function($http) {
           console.log(data);
         })
         .error(function (err) {
-          console.log('POST ERROR');
           console.log(err);
         });
     }
@@ -34,6 +45,7 @@ app.factory('downloadLinks', function($http) {
 });
 
 app.controller('createController', function($scope, downloadLinks) {
+  console.log('createController top');
   $scope.spinnerVisible = false;
   $scope.linkVisible = false;
   $scope.isError = false;
@@ -48,13 +60,11 @@ app.controller('createController', function($scope, downloadLinks) {
         $scope.spinnerVisible = false;
         $scope.link = msg;
         $scope.linkVisible = true;
-        console.log("in success after post");
       })
       .error(function (msg) {
         $scope.spinnerVisible = false;
         $scope.message = msg;
         $scope.isError = true;
-        console.log('in ERROR after post');
       });
   };
 

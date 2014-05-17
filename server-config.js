@@ -17,11 +17,11 @@ app.configure(function() {
 });
 
 var renderHome = function (req, res) {
-  res.sendfile('./client/templates/home.html');
+  res.sendfile('./client/templates/layout.html');
 };
 
 var renderCreate = function (req, res) {
-  res.sendfile('./client/templates/shorten.html');
+  res.sendfile('./client/templates/layout.html');
 };
 
 app.get('/', renderHome);
