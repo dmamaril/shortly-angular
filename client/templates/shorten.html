@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Shortly</title>
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <script src="../lib/angular.js"></script>
+    <script src="../lib/angular-route.js"></script>
+    <script src="../js/app.js"></script>
+    <!-- <script src="../../bower_components/angular/angular.js"></script>
+    <script src="../../bower_components/angular-route/angular-route.js"></script> -->
+
+  </head>
+
+  <body ng-app="shortly">
+    <h1>Shortly</h1>
+    <div class='navigation'>
+      <ul>
+        <li><a href='#' class='index'>All Links</a></li>
+        <li><a href='#' class='create'>Shorten</a></li>
+      </ul>
+        <a href='/logout' class='logout'>Logout</a>
+      </div>
+    <div id='container'></div>
+
+    <form>
+        <input class='text' type='text' name='url'>
+        <input type='submit' value='Shorten'>
+    </form>
+    <img class='spinner' src='/spiffygif_46x46.gif'>
+    <div class='message'></div>
+
+  </body>
+</html>
+
