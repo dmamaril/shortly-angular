@@ -2,13 +2,13 @@ var app = angular.module('shortly', ['ngRoute']);
 
 app.config(['$routeProvider', function($routeProvider) {
   $routeProvider
-    // .when('/', {
-    //   controller: 'linksController',
-    //   templateUrl: './home.html'
-    // })
+    .when('/', {
+      controller: 'linksController',
+      templateUrl: '/templates/home.html'
+    })
     .when('/create', {
       controller: 'createController',
-      template: '<h2>hello</h2>'
+      templateUrl: '/templates/shorten.html'
     });
 }]);
 
