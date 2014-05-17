@@ -1,7 +1,15 @@
-<!-- <div class='info' ng-controller="linksController"> -->
-<div class='info'>
+<div class='info' ng-controller="linksController">
 
-  <div class='link' ng-repeat="link in links">
+  <input type="text" ng-model="name" placeholder="Search by title">
+  <p>Sort by...
+  <select name="select" ng-model="sortCriterion">
+    <option value="visits">Visits</option>
+    <option value="title">Title</option>
+    <option value="url">URL</option>
+  </select>
+  </p>
+
+  <div class='link' ng-repeat="link in links | filter:{title: name} | orderBy: sortCriterion:true">
     <img src='../redirect_icon.png'/>
     <div class='visits'><span class='count'>{{ link.visits}}</span>Visits</div>
     <div class='title'>{{ link.title }}</div>

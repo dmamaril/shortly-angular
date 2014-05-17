@@ -1,9 +1,8 @@
-<!-- <div ng-controller="createController"> -->
-<div>
+<div ng-controller="createController">
 
   <form ng-submit='post()'>
-      <input ng-model='url' class='text' type='text'>
-      <input type='submit' value='Shorten'>
+      <input ng-model='url' class='text' type='url' required />
+      <input type='submit' value='Shorten' />
   </form>
   <img class='spinner' src='/spiffygif_46x46.gif' ng-show="spinnerVisible">
   <div class='message' ng-class="isError ? 'error' : '' ">{{message}}</div>

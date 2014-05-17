@@ -31,8 +31,9 @@
     "bluebird": "1.0.8"
   },
   "devDependencies": {
-    "supertest": "^0.10.0",
     "grunt": "^0.4.5",
-    "grunt-contrib-concat": "^0.3.0"
+    "grunt-contrib-concat": "^0.3.0",
+    "karma": "^0.12.16",
+    "supertest": "^0.10.0"
   }
 }

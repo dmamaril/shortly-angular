@@ -49,7 +49,6 @@ app.controller('createController', function($scope, downloadLinks) {
   $scope.spinnerVisible = false;
   $scope.linkVisible = false;
   $scope.isError = false;
-  // $scope.url;
   $scope.post = function() {
     $scope.spinnerVisible = true;
     $scope.message = '';
